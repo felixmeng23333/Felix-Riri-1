@@ -1,0 +1,17 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>峥峥的食堂</title><link rel="manifest" href="../../manifest.webmanifest"><link rel="apple-touch-icon" href="../../icons/icon-180.png"><link rel="stylesheet" href="../../styles.css"></head>
+<body><header class="appbar"><div class="brand"><div class="logo">🍱</div><div class="title" id="title">分类</div></div><div class="right"><a class="icon-btn" href="../../index.html">🏠</a></div></header>
+<main id="main"><section id="menu" class="menu"></section></main>
+<footer class="cartbar" id="cartbar" hidden><div class="cart-summary"><div><strong id="cart-count">0</strong> 件 · <strong id="cart-total">0❤️</strong></div></div><button id="btnCart" class="btn-primary">去下单</button></footer>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-sheet">
+    <header class="drawer-head"><div>购物车</div><button id="btnCloseDrawer" class="icon-btn">✕</button></header>
+    <div id="cartList" class="cart-list"></div>
+    <div class="cart-bottom">
+      <textarea id="orderNotes" placeholder="下单备注（如：少油少盐、不要香菜）"></textarea>
+      <div class="cart-totals"><div>累计爱心 <span id="subtotal">0❤️</span></div><div class="bold">合计 <span id="grandTotal">0❤️</span></div></div>
+      <div class="actions"><button id="btnClear" class="btn-plain">清空</button><button id="btnPlace" class="btn-primary">去下单</button></div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+</div>
+<script>window.DEFAULT_CATEGORY='白人饭也是香香的';</script><script src="../../app.js"></script></body></html>

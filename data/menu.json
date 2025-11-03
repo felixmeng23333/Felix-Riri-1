@@ -42,6 +42,7 @@
       "name": "麻辣鸡丁米线",
       "desc": "香辣过瘾",
       "hearts": 2,
+      "img": "images/kf2.jpg",
       "options": [
         {
           "title": "主食（必选）",

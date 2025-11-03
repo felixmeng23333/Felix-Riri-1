@@ -1,1 +1,8 @@
-self.addEventListener('install',e=>{e.waitUntil(caches.open('zz-v3').then(c=>c.addAll(['./','./index.html','./styles.css','./app.js','./data/menu.json','./manifest.webmanifest'])))});self.addEventListener('fetch',e=>{e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)))})
+
+const CACHE='zz-cat-full-v3';
+self.addEventListener('install',e=>{
+  e.waitUntil(caches.open(CACHE).then(c=>c.addAll([
+    './','./index.html','./styles.css','./app.js','./data/menu.json','./manifest.webmanifest'
+  ])));
+});
+self.addEventListener('fetch',e=>{ e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))); });
