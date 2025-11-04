@@ -1,11 +1,36 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>峥峥的食堂 · 目录</title><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/icon-180.png"><link rel="stylesheet" href="styles.css"></head>
-<body><header class="appbar"><div class="brand"><div class="logo">🍱</div><div class="title">峥峥的食堂 · 目录</div></div></header>
-<main style="padding:12px"><p>选择要看的分类小目录：</p><ul><li><a href="cats/laokaifeng/index.html">老开封！</a></li>
-<li><a href="cats/mocaitang/index.html">常规馍菜汤</a></li>
-<li><a href="cats/rice/index.html">吃米饭啦！</a></li>
-<li><a href="cats/spicy/index.html">给我整点辣的</a></li>
-<li><a href="cats/white/index.html">白人饭也是香香的</a></li>
-<li><a href="cats/junk/index.html">垃圾食品列表</a></li>
-<li><a href="cats/healthy/index.html">轻食健康</a></li>
-<li><a href="cats/drink/index.html">饮料小食</a></li>
-<li><a href="cats/cold/index.html">爽口小凉菜</a></li></ul><p>或打开 <a href="cats/all.html">全部菜单（单页）</a></p></main></body></html>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>峥峥的食堂 · 单页</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/icon-180.png"><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header class="appbar"><div class="brand"><div class="logo">🍱</div><div class="title">峥峥的食堂（全部分类）</div></div></header>
+<main id="container"></main>
+<footer class="cartbar" id="cartbar" hidden><div><strong id="cart-count">0</strong> 件 · <strong id="cart-total">0❤️</strong></div><button id="btnCart" class="btn-primary">去下单</button></footer>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-sheet">
+    <header class="drawer-head"><div>购物车</div><button id="btnCloseDrawer" class="btn-plain">✕</button></header>
+    <div id="cartList" class="cart-list"></div>
+    <div class="cart-bottom">
+      <textarea id="orderNotes" placeholder="下单备注（如：少油少盐、不要香菜）"></textarea>
+      <div class="cart-totals"><div>累计爱心 <span id="subtotal">0❤️</span></div><div class="bold">合计 <span id="grandTotal">0❤️</span></div></div>
+      <div class="actions"><button id="btnClear" class="btn-plain">清空</button><button id="btnPlace" class="btn-primary">去下单</button></div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+</div>
+
+<!-- 下单方式选择弹窗 -->
+<div class="modal" id="orderModal" aria-hidden="true">
+  <div class="modal-backdrop" id="orderModalBackdrop"></div>
+  <div class="modal-sheet" role="dialog" aria-labelledby="orderModalTitle">
+    <div class="modal-title" id="orderModalTitle">选择下单方式</div>
+    <div class="modal-actions">
+      <button id="btnSms" class="btn-primary">短信（SMS）</button>
+      <button id="btnWeChat" class="btn-plain">复制微信模板</button>
+      <button id="btnEmail" class="btn-plain">邮件（mailto）</button>
+      <button id="closeOrderModal" class="btn-plain">取消</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body></html>

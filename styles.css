@@ -1,23 +1,38 @@
 
 *{box-sizing:border-box}
 body{margin:0;background:#fafafa;color:#111;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
-.appbar{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#fff;border-bottom:1px solid #eee}
-.brand{display:flex;gap:8px;align-items:center}.title{font-weight:700}.icon-btn{border:none;background:transparent;font-size:18px;padding:8px;border-radius:10px}
-.menu{padding:12px;display:grid;gap:10px;grid-template-columns:1fr 1fr}
-@media(min-width:680px){.menu{grid-template-columns:1fr 1fr 1fr}}
-.item-card{position:relative;border:1px solid #eee;background:#fff;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px}
-.item-card .thumb{width:100%;aspect-ratio:1.2/1;border-radius:10px;background:#f5f5f5;background-size:cover;background-position:center}
-.btn-primary{background:#111;color:#fff;border:none;border-radius:12px;padding:10px 14px}
-.btn-plain{border:1px solid #ddd;background:#fff;border-radius:12px;padding:8px 12px}
-.cartbar{position:sticky;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:12px;background:#fff;border-top:1px solid #eee}
-.small{font-size:12px}.muted{color:#777}
-.drawer{position:fixed;inset:0;display:none;z-index:50}
+.appbar{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#fff;border-bottom:1px solid #eee;z-index:10}
+.brand{display:flex;gap:8px;align-items:center}.title{font-weight:700}
+.section{padding:16px 12px;border-top:10px solid #f1f1f1}
+.section:first-of-type{border-top:none}
+.section-head{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.section-head .pill{background:#111;color:#fff;border-radius:18px;padding:6px 12px;font-weight:600}
+.hero{width:100%;aspect-ratio:16/6;border-radius:12px;background:#eaeaea;background-size:cover;background-position:center;margin:6px 0 10px 0}
+.menu{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+@media(min-width:780px){.menu{grid-template-columns:1fr 1fr 1fr}}
+.item-card{border:1px solid #eee;background:#fff;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px}
+.thumb{width:100%;aspect-ratio:1.2/1;border-radius:10px;background:#f5f5f5;background-size:cover;background-position:center}
+.small{font-size:12px;color:#777}
+.btn-primary{background:#111;color:#fff;border:none;border-radius:12px;padding:10px 14px;cursor:pointer}
+.btn-plain{border:1px solid #ddd;background:#fff;border-radius:12px;padding:8px 12px;cursor:pointer}
+.cartbar{position:sticky;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:12px;background:#fff;border-top:1px solid #eee;z-index:11}
+/* Drawer */
+.drawer{position:fixed;inset:0;display:none;z-index:9999;pointer-events:none}
 .drawer.show{display:block}
-.drawer-sheet{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top-left-radius:18px;border-top-right-radius:18px;max-height:85vh;overflow:auto;box-shadow:0 -8px 24px rgba(0,0,0,.12)}
-.drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35)}
+.drawer-sheet{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top-left-radius:18px;border-top-right-radius:18px;max-height:85vh;overflow:auto;box-shadow:0 -8px 24px rgba(0,0,0,.2);z-index:10001;pointer-events:auto}
+.drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:10000;pointer-events:auto}
 .drawer-head{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid #eee}
 .cart-list{padding:10px 14px;display:grid;gap:10px;overflow:auto}
 .cart-row{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px dashed #eee;padding-bottom:8px}
 .cart-bottom{padding:12px 14px;border-top:1px solid #eee;display:grid;gap:10px}
 #orderNotes{min-height:64px;border:1px solid #ddd;border-radius:10px;padding:10px}
 .cart-totals{display:grid;gap:6px;justify-items:end}
+
+/* Modal for order options */
+.modal{position:fixed;inset:0;display:none;z-index:12000}
+.modal.show{display:block}
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4)}
+.modal-sheet{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff;border-radius:16px;min-width:280px;max-width:92vw;padding:18px;box-shadow:0 12px 32px rgba(0,0,0,.2)}
+.modal-title{font-weight:700;margin-bottom:10px}
+.modal-actions{display:grid;gap:10px;margin-top:8px}
+.modal-actions .btn-primary,.modal-actions .btn-plain{width:100%}
